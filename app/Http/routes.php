@@ -12,12 +12,21 @@
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/users');
+});
+Route::get('/logout', function () {
+    return Auth::logout();
+});
+
+Route::get('/amiloggedin', function () {
+    return dd(Auth::user());
 });
 
 Route::get('/login', 'AuthController@login');
 
-Route::get('/users', [
-	'uses' => 'UserController@view',
-	'as'   => 'users',
-]);
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('/users', [
+		'uses' => 'UserController@view',
+		'as'   => 'users',
+	]);
+});

@@ -1,2 +1,270 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import 'variables';
 
+*{
+	box-sizing:border-box;
+	// outline:1px solid rgba(255,0,85,0.25);
+}
+
+body{
+	margin:0;
+	font:16px/22px 'Assistant',  Helvetica, Tahoma, sans-serif;
+	color:$color;
+	background-color:$lightbg;
+}
+
+.container{
+	position:absolute;
+	font-size:0;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	overflow:hidden;
+}
+
+@mixin neko{
+	font-size:1rem;
+	position:relative;
+	display:block;
+	width:100%;
+}
+
+.sidebar{
+	width:15rem;
+	display:inline-block;
+	height:100%;
+	background:$darkbg;
+	color:$p;
+	border-right:1px solid $lightborder;
+	transition:margin 0.3s ease;
+	& a{
+		color:$p2;
+	}
+	& a:hover{
+		color:#fff;
+	}
+	&>header{
+		@include neko;
+		height:5rem;
+		border-bottom:1px solid $darkborder;
+		&>.logo{
+			vertical-align:top;
+			width:3rem;
+			height:3rem;
+			margin-top:1rem;
+			margin-left:1rem;
+		}
+		&>.info{
+			display:inline-block;
+			width:calc(100% - 5rem);
+			margin-top:1rem;
+			&>a{
+				display:block;
+				text-align:left;
+				padding-left:0.5rem;
+				font-size:0.8rem;
+				height:1.5rem;
+				line-height:1.6rem;
+			}
+		}
+	}
+	&>nav{
+		@include neko;
+		height:calc(100% - 10rem + 1px);
+		& a{
+			display:block;
+			padding:0.5rem 0;
+			text-align:left;
+			padding-left:1rem;
+			background:$darkbg;
+		}
+		& a:hover{
+			background:lighten($darkbg,6);
+		}
+		& a.active{
+			box-shadow:4px 0 0 0 #fff inset;
+			color:#fff;
+			background:lighten($darkbg,6);
+		}
+		& a+a{
+			border-top:1px solid $darkborder;
+		}
+		& a:last-of-type{
+			border-bottom:1px solid $darkborder;
+		}
+		& a:first-of-type:hover{
+			margin-top:0;
+		}
+	}
+	&>.profile{
+		@include neko;
+		height:5rem;
+		border-top:1px solid $darkborder;
+		margin-top:-1px;
+		&>.avatar{
+			vertical-align:top;
+			width:3rem;
+			height:3rem;
+			margin-top:1rem;
+			margin-left:1rem;
+		}
+		&>.links{
+			display:inline-block;
+			width:calc(100% - 5rem);
+			margin-top:1rem;
+			&>a{
+				display:block;
+				text-align:left;
+				padding-left:0.5rem;
+				font-size:0.8rem;
+				height:1.5rem;
+				line-height:1.6rem;
+			}
+		}
+	}
+}
+
+.main-panel{
+	width:calc(100% - 15rem);
+	display:inline-block;
+	height:100%;
+	vertical-align:top;
+	transition:width 0.3s ease;
+	& a{
+		color:$darkbg;
+	}
+	&>header{
+		@include neko;
+		height:3rem;
+		background-color:#fff;
+		border-bottom:1px solid rgba(0,0,0,0.2);
+		text-align:center;
+		padding-top:0.75rem;
+	}
+	&>.nano{
+		position:relative;
+		display:block;
+		width:100%;
+		height:calc(100% - 3rem);
+		& .hero{
+			@include neko;
+			text-align:center;
+			padding-top:1rem;
+			padding-bottom:1rem;
+			background:$lightborder;
+			border-bottom:1px solid $lightborder;
+			&>h1{
+				margin:0;
+				padding:0;
+				color:#555;
+				height:1.5rem;
+				font-size:1.5rem;
+				margin:0.5rem 0;
+			}
+			& p{
+				font-size:0.8rem;
+				max-width:24rem;
+				height:6rem;
+				margin:0 auto;
+				text-align:left;
+			}
+			&>a{
+				padding:0.2rem 0.6rem;
+				background:#fff;
+				border:1px solid rgba(0,0,0,0.2);
+			}
+			&>a+a{
+				margin-left:0.2rem;
+			}
+		}
+		& main{
+			@include neko;
+			min-height:calc(100% - 12rem);
+			padding:0 1.5rem;
+		}
+	}
+}
+
+a{
+	text-decoration:none;
+}
+
+a>i{
+	width:1rem;
+	height:1rem;
+	margin-right:1.1rem;
+	vertical-align:middle;
+	display:inline-block;
+	text-align:center;
+	line-height:1rem;
+	font-style:normal;
+	font-size:1.5rem;
+	text-rendering:optimizeSpeed;
+	margin-left:-4px;
+	margin-top:-12px;
+}
+
+a>i.small{
+	font-size:18px;
+	margin-top:-5px;
+	margin-right:0.6rem;
+}
+
+div.image{
+	display:table;
+	background:rgba(0,0,0,0.2);
+	float:left;
+	margin-right:1rem;
+}
+div.image>span{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+div.list-table{
+	padding:1rem 0;
+}
+div.list-item{
+	display:table;
+	table-layout:fixed;
+	width:100%;
+	&>div{
+		display:table-cell;
+		padding-top:0.5rem;
+		padding-bottom:0.5rem;
+		vertical-align:middle;
+		&>.image{
+			width:calc(100% - 1rem);
+			padding-top:calc(100% - 1rem);
+		}
+		& button{
+			background:#fff;
+			border:1px solid $lightborder;
+			display:block;
+			width:6rem;
+		}
+		& button+button{
+			margin-top:3px;
+		}
+	}
+	&>div+div{
+		padding-right:1rem;
+	}
+	&>div.action{
+		text-align:right;
+		width:6rem;
+		padding-right:0;
+	}
+}
+div.list-item + div.list-item{
+	border-top:1px solid rgba(0,0,0,0.2);
+}
+
+@media(max-width: 720px){
+	.sidebar{
+		margin-left:-15rem;
+	}
+	.main-panel{
+		width:100%;
+	}
+}

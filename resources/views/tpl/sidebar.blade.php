@@ -29,7 +29,7 @@
                 </div>
             </nav>
             <div class="profile">
-                <div class="avatar image"><span>img</span></div>
+                <div class="avatar image" style="background-image:url('{{Auth::user()->avatar}}')"></div>
                 <div class="links">
                     <a href="#" class="profile"><i class="material-icons small">person</i>My Profile</a>
                     <a href="#" class="settings"><i class="material-icons small">build</i>Settings</a>

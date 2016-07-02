@@ -12,11 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
-
-Route::get('/admin', function() {
-	return "logged in";
-});
 Route::get('/login', 'AuthController@login');
+
+Route::get('/users', [
+	'uses' => 'UserController@view',
+	'as'   => 'users',
+]);

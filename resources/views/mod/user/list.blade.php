@@ -9,14 +9,11 @@
 @foreach ($data as $user)
 	<div class="list-item">
 		<div class="avatar" style="width:5rem;">
-			<div class="avatar-image image"></div>
+			<div class="avatar-image image" style="background-image:url('{{$user['avatar']}}');"></div>
 		</div>
 		<div class="name">
 			<div>{{$user['name']}}</div>
-			<div>{{$user['user_first_name']}} {{$user['user_last_name']}}</div>
-		</div>
-		<div class="role">
-			<div>{{config("custom.roles.".$user['user_type'])}}</div>
+			<div>{{$user['steamid']}}</div>
 		</div>
 		<div class="action">
 			<button>edit</button>

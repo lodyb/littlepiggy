@@ -25,14 +25,13 @@ class AuthController extends Controller
                 $user = User::where('steamid', $info->getSteamID64())->first();
                 if (is_null($user)) {
                     $user = User::create([
-                        'username' => $info->getNick(),
+                        'name' => $info->getNick(),
                         'avatar'   => $info->getProfilePictureFull(),
                         'steamid'  => $info->getSteamID64()
                     ]);
                 }
                 Auth::login($user, true);
-                dd($info);
-                return redirect('/admin'); // redirect to site
+                return redirect('/users'); // redirect to site
             }
         }
         return $this->steam->redirect(); // redirect to Steam login page

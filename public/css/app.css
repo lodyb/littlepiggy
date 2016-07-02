@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: 16px/22px 'Assistant',  Helvetica, Tahoma, sans-serif;
+  color: #121215;
+  background-color: #f7f7f7; }
+
+.container {
+  position: absolute;
+  font-size: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden; }
+
+.sidebar {
+  width: 15rem;
+  display: inline-block;
+  height: 100%;
+  background: #514FA0;
+  color: #E393B6;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  transition: margin 0.3s ease; }
+  .sidebar a {
+    color: #eef; }
+  .sidebar a:hover {
+    color: #fff; }
+  .sidebar > header {
+    font-size: 1rem;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 5rem;
+    border-bottom: 1px solid #413f80; }
+    .sidebar > header > .logo {
+      vertical-align: top;
+      width: 3rem;
+      height: 3rem;
+      margin-top: 1rem;
+      margin-left: 1rem; }
+    .sidebar > header > .info {
+      display: inline-block;
+      width: calc(100% - 5rem);
+      margin-top: 1rem; }
+      .sidebar > header > .info > a {
+        display: block;
+        text-align: left;
+        padding-left: 0.5rem;
+        font-size: 0.8rem;
+        height: 1.5rem;
+        line-height: 1.6rem; }
+  .sidebar > nav {
+    font-size: 1rem;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: calc(100% - 10rem + 1px); }
+    .sidebar > nav a {
+      display: block;
+      padding: 0.5rem 0;
+      text-align: left;
+      padding-left: 1rem;
+      background: #514FA0; }
+    .sidebar > nav a:hover {
+      background: #605eb0; }
+    .sidebar > nav a.active {
+      box-shadow: 4px 0 0 0 #fff inset;
+      color: #fff;
+      background: #605eb0; }
+    .sidebar > nav a + a {
+      border-top: 1px solid #413f80; }
+    .sidebar > nav a:last-of-type {
+      border-bottom: 1px solid #413f80; }
+    .sidebar > nav a:first-of-type:hover {
+      margin-top: 0; }
+  .sidebar > .profile {
+    font-size: 1rem;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 5rem;
+    border-top: 1px solid #413f80;
+    margin-top: -1px; }
+    .sidebar > .profile > .avatar {
+      vertical-align: top;
+      width: 3rem;
+      height: 3rem;
+      margin-top: 1rem;
+      margin-left: 1rem;
+      background-size: contain; }
+    .sidebar > .profile > .links {
+      display: inline-block;
+      width: calc(100% - 5rem);
+      margin-top: 1rem; }
+      .sidebar > .profile > .links > a {
+        display: block;
+        text-align: left;
+        padding-left: 0.5rem;
+        font-size: 0.8rem;
+        height: 1.5rem;
+        line-height: 1.6rem; }
+
+.main-panel {
+  width: calc(100% - 15rem);
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+  transition: width 0.3s ease; }
+  .main-panel a {
+    color: #514FA0; }
+  .main-panel > header {
+    font-size: 1rem;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 3rem;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-top: 0.75rem; }
+  .main-panel > .nano {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: calc(100% - 3rem); }
+    .main-panel > .nano .hero {
+      font-size: 1rem;
+      position: relative;
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background: rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      .main-panel > .nano .hero > h1 {
+        margin: 0;
+        padding: 0;
+        color: #555;
+        height: 1.5rem;
+        font-size: 1.5rem;
+        margin: 0.5rem 0; }
+      .main-panel > .nano .hero p {
+        font-size: 0.8rem;
+        max-width: 24rem;
+        height: 6rem;
+        margin: 0 auto;
+        text-align: left; }
+      .main-panel > .nano .hero > a {
+        padding: 0.2rem 0.6rem;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2); }
+      .main-panel > .nano .hero > a + a {
+        margin-left: 0.2rem; }
+    .main-panel > .nano main {
+      font-size: 1rem;
+      position: relative;
+      display: block;
+      width: 100%;
+      min-height: calc(100% - 12rem);
+      padding: 0 1.5rem; }
+
+a {
+  text-decoration: none; }
+
+a > i {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1.1rem;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  line-height: 1rem;
+  font-style: normal;
+  font-size: 1.5rem;
+  text-rendering: optimizeSpeed;
+  margin-left: -4px;
+  margin-top: -12px; }
+
+a > i.small {
+  font-size: 18px;
+  margin-top: -5px;
+  margin-right: 0.6rem; }
+
+div.image {
+  display: table;
+  background: rgba(0, 0, 0, 0.2);
+  float: left;
+  margin-right: 1rem; }
+
+div.image > span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
+
+div.list-table {
+  padding: 1rem 0; }
+
+div.list-item {
+  display: table;
+  table-layout: fixed;
+  width: 100%; }
+  div.list-item > div {
+    display: table-cell;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    vertical-align: middle; }
+    div.list-item > div > .image {
+      width: calc(100% - 1rem);
+      padding-top: calc(100% - 1rem);
+      background-size: contain; }
+    div.list-item > div button {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: block;
+      width: 6rem; }
+    div.list-item > div button + button {
+      margin-top: 3px; }
+  div.list-item > div + div {
+    padding-right: 1rem; }
+  div.list-item > div.action {
+    text-align: right;
+    width: 6rem;
+    padding-right: 0; }
+
+div.list-item + div.list-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.2); }
+
+@media (max-width: 720px) {
+  .sidebar {
+    margin-left: -15rem; }
+  .main-panel {
+    width: 100%; } }
+
+/*# sourceMappingURL=app.css.map */

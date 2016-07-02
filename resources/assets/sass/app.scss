@@ -107,6 +107,7 @@ body{
 			height:3rem;
 			margin-top:1rem;
 			margin-left:1rem;
+			background-size:contain;
 		}
 		&>.links{
 			display:inline-block;
@@ -236,6 +237,7 @@ div.list-item{
 		&>.image{
 			width:calc(100% - 1rem);
 			padding-top:calc(100% - 1rem);
+			background-size:contain;
 		}
 		& button{
 			background:#fff;
